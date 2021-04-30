@@ -32,8 +32,16 @@
 \usetikzlibrary{decorations.pathmorphing}
 
 \usepackage{algorithm, algorithmic}
+\usepackage{xcolor}
 
 \usepackage[colorlinks=true,allcolors=red]{hyperref}
+
+
+\def\sectionautorefname{S}
+\def\subsectionautorefname{S}
+\def\subsubsectionautorefname{S}
+
+\newcommand{\tosec}[1]{\textcolor{red}{[}\autoref{#1}\textcolor{red}{]}}
 
  \def\numset#1{{\\mathbb #1}}
 
@@ -101,20 +109,16 @@ In this review, we present the current state of the art for rare-earth based ion
 
 The history of the classical computer illustrates the progression from a proof of concept, using vacuum tubes, to the eventual sophistication of modern silicon architecture. We predict that quantum computation will chart a similar course, abandoning the relative simplicity of controlling quantized currents in superconducting loops with modern electronics, and arriving at a much more robust and sophisticated design.
 
-%The merge of quantum mechanics and information theory garnered attention when Richard Feynman reasoned that computing based on classical logic could not tractably process calculations describing quantum phenomena. Quantum computing rose dramatically when mathematician Peter Shor developed a quantum algorithm, which could find the prime factors of large numbers efficiently. What makes quantum computers unique for operation are superposition, entanglement, and coherence. Superposition is the counterintuitive ability of a quantum object to simultaneously exist in multiple states. One of these states may be the lowest energy level while another may be the first excited level. If an object is prepared in a superposition of these two states it has some probability of being in the lower state and some probability of being in the upper. A measurement will destroy this superposition, and only then can it be said that it is in the lower or upper state. Understanding superposition makes it possible to understand the basic component of information, commonly known as qubit, in quantum computing.  Qubits are distinguished from classical bits by their ability to be in superpositions with varying probabilities that can be manipulated by quantum operations. Entanglement is a phenomenon in which quantum entities are created or manipulated such that none of them can be described without referencing the others. Coherence is a delicate property that is needed to maintain entanglement and superposition. Quantum computers have the potential to revolutionize computation by making certain types of classically intractable problems solvable. While no quantum computer is yet sophisticated enough to carry out calculations that a classical computer cannot. 
+Ionic quantum computers, though incompatible with classical circuitry, have been strong contenders for the future development of quantum computation, ever since Cirac and Zoller demonstrated a feasible method of applying arbitrary unitary matrices to linear arrays of ions. \cite{fundQuanIoni} More recently, two industry quantum computers using Ytterbium were introduced by Honeywell \cite{rareEartFund} and IonQ \cite{ionq}. Both computers use the lone outer $S$ shell electron of $Yb*+$ to encode quantum states. The IonQ team used a more direct method which placed all the $Yb^+$ ions in a line and applied individual addressment to the shared motional state to induce gates. The Honeywell computer used ion locomotion through magnetic fields in order to physically move qubits between gates. Both approaches show promise.\\
+Our approach in this article is to give a picture of the different techniques posssible for $Yb^+$ quantum copmuters. We start \tosec[sec:prelim] with an overview of basic designs of traps for ion computers and basic info on the properties of $Yb$. After that, we proceed in the order in which a quantum computer could concevably operate, starting with --Here, I fill it out as I add labels to sections--
 
-Ionic quantum computers, though incompatible with classical circuitry, have been strong contenders for the future development of quantum computation, ever since Cirac and Zoller demonstrated a feasible method of applying arbitrary unitary matrices to linear arrays of ions. \cite{fundQuanIoni} Honeywell employed  trapped-ion qubits using isotopes of rare-earth ($4f$ electron system) called ytterbium  \cite{rareEartFund} to implement a quantum charge-coupled device (QCCD) with surrounding electrode temperatures at $12.6\,$K using an enhanced two-qubit gate. In addition, the Honeywell team claims one of the highest measures of computing power up to this point.\cite{honeywell} The success of the Honeywell computer, building on more recent work allowing increased accuracy and precision for ion control, demonstrates that the stability of atomic orbitals is a strong candidate for the storage and manipulation of qubits.
+\section{Preliminaries}  \label{sec:prelim}
 
-Our perspective uses the Honeywell device as a concrete example to model the current state of the art, while summarizing general methods and trade-offs that arise in the production of an arbitrary rare-earth based quantum computer. Though not all methods considered are known to have been used in the Honeywell device, we are confident that similar performance could be achieved with the approach outlined. We conclude with a brief discussion of some common approaches to the error analysis of quantum computers.
 
-\section{QCCD architecture}
+\section{QCCD architecture} 
 
 Using ions for quantum computation allows simple methods of isolation from the surrounding environment, by suspension in an ion trap. Quantum charge coupled architecture utilizes electrodes along the ion trap to control their physical locations in a radio frequency (RF) or Paul trap \cite{compArchLarg}. In this trap, the RF electrodes are made of narrow metal plates, by which a negligibly small portion of light-induced flourescence (LIF) is blocked. Then, the LIF collection solid angle can be maximized. Barium ions can be trapped and laser-cooled in the RF trap with planar electrodes, and the crystallization is confirmed by the LIF spectrum \cite{ioniReviArt,miscQuanPap2}. The physical transport of ions can be realized while maintaining relative isolation, between gate applications, readouts, and initialization.
-
-
 Between interactions, the ions are stored in memory regions. They are then propelled by the electrodes through the central region in order to implement the gates. Depending on the topology of the network, arbitrary pairs of qubits can be shuttled to the interaction region in any desired arrangement, without the need to deal with multiple ions passing each other. 
-
-
 Complications arise for non-linear ion traps, as corners and intersections require fine-tuned electrode placement. Additionally, fields become less predictable, complicating the ion transport, as additional phases are liable to be induced during the transport. Linear ion traps avoid the complexities associated with intersections, at the cost of needing to effect a physical or logical ion swap. It is possible to implement quantum ion computers without ion transportation, by applying the swap gate to pairs of qubits to achieve a logical swap of the qubit states, or by using multi-qubit gates, with individual addressing \cite{fundQuanIoni}. However, ambient heating is complex to deal with, and the individual addressing may also become problematic.
 
 
@@ -1899,6 +1903,10 @@ S.~Aaronson and L.~Chen, Complexity-theoretic foundations of quantum supremacy e
 
 \bibitem{compArchPhot}
 C.~Monroe, R.~Raussendorf, A.~Ruthven, K.~Brown, P.~Maunz, L.~Duan, and J.~Kim, Large scale modular quantum computer architecture with atomic memory and photonic interconnects, Phys. Rev. A \textbf{89} (2012).
+
+\bibitem{ionq}
+S.~Allen, J.M.~Amini, J.~Apisdorf, K.M.~Beck, A.~Blinov, V.~Chaplin, J.S.~Chen, M.~Chmielewski, C.~Collins, S.~Debnath, A.M.~Ducore, N.~Grzesiak, K.M.~Hudek, M.~Keesan, J.~Kim, S.M.~Kreikemeier, J.~Mizrahi, C.~Monroe, Y.~Nam, N.C.~Pisenti, P.~Solomon, M.~Williams, J.D.~WongCampos, and K.~Wright, Benchmarking an 11-qubit quantum computer, Nat. Comm. \textbf{10}, (2019).
+
 
 \bibitem{fundQuanQubi}
 Y.~Wang, M.~Um, Z.~Junhua, S.~An, M.~Lyu, J.~Zhang, L.~Duan, D.~Yum, and K.~Kim, Single-qubit quantum memory exceeding $10$-minute coherence time, Nat. Phot. \textbf{11}, (2017).
