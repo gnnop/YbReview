@@ -1,0 +1,49 @@
+REFEREE REPORT(S):
+Referee: 1
+
+COMMENTS TO THE AUTHOR(S)
+This article is largely a review of the recent Nature article Demonstration of the trapped-ion quantum CCD computer architecture. This article provides some details behind the physics involved in the QCCD architecture that are not covered in the Nature article, most notably the physics behind the entangling gate schemes. However, some of the topics covered would need substantial reworks.
+1. The level diagram in Fig. 2 is incorrect, I believe the authors used the spin angular momentum of the already ionized atom, which only has one valence electron. However, the neutral atom has two valence electrons.
+2. Fig. 3 is unclear in that none of the states are labeled.
+3. Fig. 4 is unclear should include labeling for in the atomic states and laser fields. Also, most Doppler cooling schemes only use a single beam, whereas the authors have two counter-propagating beams. This is likely a relevant description for free-space particles, but is not used in practice for trapped particles.
+4. Fig. 5 is not clear as none of the state are labeled and the definition of \epsilon is not clear. In the figure \epsilon looks like a frequency detuning, but an earlier equation describing pulse sequences in Ramsey experiments defines it as a time.
+5. Limiting errors for qubit operations are not explained.
+6. Fig. 7 should use F quantum numbers instead of J.
+7. The origin of the transport induced qubit phase the authors mention is not explained.
+8. The electrode geometry shown in fig. 14 is not consistent with Fig. 1. The electrode geometry in Fig.1 has segmented electrodes between the RF rails.
+
+
+
+Referee: 2
+
+COMMENTS TO THE AUTHOR(S)
+The article “Rare-Earth Ion Trap Quantum Computing: The current state of the art”, by Nop, Paudyal, and Smith, is a Topical Review article focusing on the Yb+ trapped ion quantum computing platform. The article covers several topics which are necessary background for a non-expert to understand a recent article by the team at Honeywell Quantum Solutions (Nature 592, 209–213 (2021)), most of which are of broad relevance of understanding trapped ion quantum computers in general. Topics include the ion trap itself and shuttling protocols, qubit control techniques, and the theory behind certain quantum error performance metrics.
+
+In my opinion, this topical review is too focused on the Honeywell system. 
+While a review of the state of the art in industrial trapped ion quantum computation with Yb+ ions would be a worthwhile article,
+the authors completely neglect the published work by IonQ Inc (Nature Communications 10, 5464 (2019).
+If the aim of the paper is cover the “state of the art” as is suggested in the title and abstract
+, the authors should broaden the scope to include the IonQ model. Otherwise, they must explicitly narrow the stated scope of the paper.
+
+Moreover, I find many of descriptions of the included topics to be presented in confusing, misleading, or inaccurate ways.
+One that particularly stands out is section 7.1 (The Jaynes-Cummings Model). It is unclear to this reviewer why that authors
+focus on that result by Zoller et al. to present here. The JC model is most directly relevant to the trapped ion model by
+considering the interaction of the internal spin qubit with the motional mode harmonic oscillators. The authors should be
+more clearly referencing this. The qubit-laser interaction is best described using the language and mathematics of stimulated Raman transitions. 
+
+Other misleading or inaccurate sections include the one on the implementation of Doppler Cooling and the Molmer Sorenson gate.
+The author’s description of Doppler Cooling is more appropriate for free atoms, and the description should be modified
+somewhat to be relevant for Doppler cooling trapped ions. In the section on the MS gate, the authors state that the red and
+blue sideband are focused on different ions, which they are not. Many of the other details in the descriptions of the Yb+  qubit exhibit small inaccuracies.
+
+The authors have made some confusing choices about topics to include in the paper. Why include a discussion of electron bombardment
+or the Cirac Zoller gate at all? Neither are used in the Honeywell Yb+ ion trapping experiments, so it seems superfluous to mention them, and confuses the discussion.
+
+The paper has many typos and a fair amount of confusing sentence structure. Some of the basic statements about Yb+ ion
+trapping I found hard to parse, and I have more expertise in the field than the paper’s intended audience of “readers
+familiar with quantum mechanics”. Several of the figures (2, 3, 4, 5) are poorly labeled and do not effectively illustrate the physics being described.
+
+In my opinion, these flaws with the execution of the paper make it unsuitable for publication as Topical Review in QST.
+While substantial editing could perhaps fix the points I have mentioned, the poor descriptions of very standard topics to trapped
+ion quantum computing (qubit manipulations, MS gate) leaves this reviewer with little confidence that the more complex and novel
+topics (ion shuttling and gate analysis) are presented completely accurately.
